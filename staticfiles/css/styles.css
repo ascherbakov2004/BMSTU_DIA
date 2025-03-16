@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: white;
+    font-size: 14px;
+}
+
+/* Заголовок */
+.header {
+    width: 100%;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px 50px;
+    border-bottom: 2px solid rgba(200, 200, 200, 0.5);
+}
+
+.mvd-logo {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.header-text h1 {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.header-text p {
+    font-size: 14px;
+    font-weight: normal;
+    color: #666;
+}
+
+.header-contact {
+    margin-left: auto;
+    text-align: right;
+}
+
+.contact-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.contact-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Меню */
+.menu {
+    background: rgba(64,104,156,1);
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-item {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 30px;
+    text-decoration: none;
+}
+
+/* Контейнер контента */
+.content {
+    padding: 20px;
+    text-align: center;
+}

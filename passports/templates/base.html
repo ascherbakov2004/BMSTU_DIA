@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автоматический контроль паспортов</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <img src="http://127.0.0.1:9000/passports/mvd_logo_143x83.png" alt="Герб МВД" class="mvd-logo">
+            <div class="header-text">
+                <h1>МИНИСТЕРСТВО ВНУТРЕННИХ ДЕЛ<br>РОССИЙСКОЙ ФЕДЕРАЦИИ</h1>
+                <p>СЛУЖИМ РОССИИ, СЛУЖИМ ЗАКОНУ!</p>
+            </div>
+            <div class="header-contact">
+                <span class="contact-text">ВСЕГДА НА СВЯЗИ</span>
+                <span class="contact-number">102</span>
+            </div>
+        </div>
+        <nav class="menu">
+            <a href="{% url 'passport_list' %}" class="menu-item">СВЕДЕНИЯ О ПАСПОРТАХ</a>
+            <a href="{% url 'applications_list' %}" class="menu-item">ЗАЯВКИ</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+<a href="{% url 'cart_view' %}" class="cart-button">
+    📄 <span class="cart-count">{{ request.session.cart|length }}</span>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,651 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: white;
+    font-size: 14px;
+}
+
+/* Заголовок */
+.header {
+    width: 100%;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px 50px;
+    border-bottom: 2px solid rgba(200, 200, 200, 0.5);
+}
+
+.mvd-logo {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.header-text h1 {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.header-text p {
+    font-size: 14px;
+    font-weight: normal;
+    color: #666;
+}
+
+.header-contact {
+    margin-left: auto;
+    text-align: right;
+}
+
+.contact-text {
+    font-size: 14px;
+    color: #40689C;
+}
+
+.contact-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Меню */
+.menu {
+    background: rgba(64,104,156,1);
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-item {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 30px;
+    text-decoration: none;
+}
+
+/* Контейнер контента */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: white;
+    font-size: 14px;
+}
+
+/* Контейнер для всех паспортов */
+.passport-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Карточка паспорта */
+.passport-card {
+    width: 800px;
+    background: rgba(217,217,217,1);
+    border-radius: 50px;
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Фото паспорта */
+.passport-photo {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Блок с текстом и кнопками */
+.passport-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Имя */
+.passport-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Кнопки */
+.passport-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    background: rgba(64,104,156,1);
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.btn:hover {
+    background: rgba(45,80,130,1);
+}
+
+/* Контейнер для страницы паспорта */
+.passport-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Карточка паспорта */
+.passport-card {
+    width: 600px;
+    background: rgba(217,217,217,1);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Фото паспорта */
+.passport-photo {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Информация о паспорте */
+.passport-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.passport-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #40689C;
+    margin-bottom: 10px;
+}
+
+/* Кнопка оформления заявки */
+.btn-large {
+    background: rgba(64,104,156,1);
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    display: inline-block;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-large:hover {
+    background: rgba(45,80,130,1);
+}
+
+/* Стиль кнопки корзины */
+.cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #40689C;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: 60px;
+    height: 60px;
+}
+
+.cart-count {
+    font-weight: bold;
+    background: white;
+    color: #40689C;
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 5px;
+}
+/* Контейнер корзины */
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Заголовок */
+.cart-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #40689C;
+    margin-bottom: 20px;
+}
+
+/* Сетка для паспортов */
+.cart-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Карточка паспорта */
+.cart-item {
+    width: 300px;
+    background: rgba(217, 217, 217, 1);
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Фото паспорта */
+.passport-photo {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Имя владельца паспорта */
+.passport-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Пустая корзина */
+.empty-cart {
+    font-size: 18px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Контейнер корзины */
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Заголовок */
+.cart-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #40689C;
+    margin-bottom: 20px;
+}
+
+/* Карточка паспорта (как в "Подробнее") */
+.passport-card {
+    width: 800px;
+    background: rgba(217, 217, 217, 1);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Фото паспорта */
+.passport-photo {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Информация о паспорте */
+.passport-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Выравнивание по левому краю */
+    text-align: left; /* Текст тоже по левому краю */
+    width: 100%;
+}
+
+.passport-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #40689C;
+    margin-bottom: 10px;
+}
+.passport-info p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Карточка паспорта */
+.passport-card {
+    width: 800px;
+    background: rgba(217, 217, 217, 1);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+/* Кнопка "Оформить заявку" */
+.btn-large {
+    background: rgba(64,104,156,1);
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    display: inline-block;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-large:hover {
+    background: rgba(45,80,130,1);
+}
+
+/* Кнопка удаления паспорта */
+.btn-delete {
+    background: #d9534f;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: auto;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-delete:hover {
+    background: #c9302c;
+}
+
+.application-container {
+    width: 50%;
+    margin: 40px auto;
+    padding: 30px;
+    background: #F5F5F5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-title {
+    color: #40689C;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.selected-passports {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.selected-passports h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.selected-passports ul {
+    list-style: none;
+    padding: 0;
+}
+
+.selected-passports li {
+    font-size: 16px;
+    background: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.application-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 10px 0;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+    text-align: left;
+}
+
+.form-group input {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-submit {
+    background-color: #40689C;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:hover {
+    background-color: #34557C;
+}
+
+.passport-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.passport-list li {
+    background: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #40689C;
+    border-left: 5px solid #40689C;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.applications-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #40689C;
+    margin-bottom: 20px;
+}
+
+.application-card {
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.application-date {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.passport-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.passport-list li {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end; /* Выравнивание кнопок вправо */
+    gap: 10px; /* Отступ между кнопками */
+    margin-top: 10px;
+}
+
+.btn-confirm {
+    background-color: #28a745; /* Зеленая кнопка */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.btn-confirm i {
+    font-size: 18px;
+}
+
+.btn-cancel {
+    background-color: #dc3545; /* Красная кнопка */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.btn-cancel i {
+    font-size: 18px;
+    color: white; /* Сделать крест явно видимым */
+}
+
+
+.no-applications {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Главный контейнер */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Контент занимает 100% ширины, если нет новостей */
+.content {
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* Новости (ТОЛЬКО на главной) */
+.news-sidebar {
+    width: 25%;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #40689C;
+    margin-bottom: 10px;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.news-list li a {
+    color: #40689C;
+    text-decoration: none;
+}
+
+.news-list li a:hover {
+    text-decoration: underline;
+}
+
+

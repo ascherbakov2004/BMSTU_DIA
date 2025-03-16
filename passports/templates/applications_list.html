@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="applications-container">
+    <h2 class="section-title">Список заявок</h2>
+
+    {% if applications %}
+        {% for application in applications %}
+            <div class="application-card">
+                <p class="application-date"><strong>Дата пересечения:</strong> {{ application.crossing_date|date:"d F Y" }}</p>
+
+                <div class="passport-list">
+                    <strong>Паспорта:</strong>
+                    <ul>
+                        {% for passport in application.passports.all %}
+                            <li>{{ passport.full_name }} (№{{ passport.passport_number }})</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <p><strong>Номер рейса:</strong> {{ application.flight_number }}</p>
+                <p><strong>Место пересечения:</strong> {{ application.crossing_point }}</p>
+                <p><strong>Страна назначения:</strong> {{ application.destination_country }}</p>
+                <p><strong>Цель поездки:</strong> {{ application.purpose }}</p>
+
+                <div class="button-group">
+                    <form method="post" action="{% url 'confirm_crossing' application.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-confirm">✅ Подтвердить факт пересечения</button>
+                    </form>
+
+                    <form method="post" action="{% url 'cancel_application' application.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-cancel">❌ Отменить заявку</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-applications">Заявок пока нет.</p>
+    {% endif %}
+</div>
+{% endblock %}
