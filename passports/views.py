@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import BorderCrossingForm
 from .models import BorderCrossingApplication, Passport, News
 from django.contrib import messages
+from django.db.models import Q
+from django.db.models.functions import Lower
 
 def passport_list(request):
     passports = Passport.objects.all()
@@ -95,3 +97,19 @@ def home(request):
     news_list = News.objects.all().order_by('-id')  # Последние новости сверху
     print(news_list)  # Выведет список новостей в консоли
     return render(request, "base.html", {"news_list": news_list})
+
+def search_results(request):
+    query = request.GET.get("q", "").strip()
+
+    if query:
+        results = Passport.objects.filter(
+            Q(full_name__icontains=query) |  # Поиск по ФИО
+            Q(passport_number__icontains=query) |  # Поиск по номеру паспорта
+            Q(country__icontains=query) |  # Поиск по стране
+            Q(issuing_authority__icontains=query)  # Поиск по органу выдачи
+        )
+    else:
+        # Если запрос пустой, показываем все заявки
+        results = BorderCrossingApplication.objects.all()
+
+    return render(request, "search_results.html", {"query": query, "results": results})

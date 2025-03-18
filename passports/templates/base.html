@@ -20,10 +20,20 @@
                 <span class="contact-number">102</span>
             </div>
         </div>
-        <nav class="menu">
-            <a href="{% url 'passport_list' %}" class="menu-item">СВЕДЕНИЯ О ПАСПОРТАХ</a>
-            <a href="{% url 'applications_list' %}" class="menu-item">ЗАЯВКИ</a>
-        </nav>
+<nav class="menu">
+    <div class="menu-center">
+        <a href="{% url 'passport_list' %}" class="menu-item">СВЕДЕНИЯ О ПАСПОРТАХ</a>
+        <a href="{% url 'applications_list' %}" class="menu-item">ЗАЯВКИ</a>
+    </div>
+
+    <!-- Форма поиска справа -->
+<div class="search-container">
+        <form action="{% url 'search_results' %}" method="GET" class="search-form">
+            <input type="text" name="q" placeholder="Поиск..." required>
+            <button type="submit">🔍</button>
+        </form>
+    </div>
+</nav>
     </header>
 
     <div class="content">

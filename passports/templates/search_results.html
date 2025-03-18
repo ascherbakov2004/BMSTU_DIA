@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="search-results-container">
+    <h2 class="search-title">Результаты поиска по запросу "{{ query }}"</h2>
+
+    {% if results %}
+        <div class="passport-container">
+            {% for passport in results %}
+                <div class="passport-card">
+                    <img src="{{ passport.photo.url }}" alt="Фото паспорта" class="passport-photo">
+                    <div class="passport-info">
+                        <h3 class="passport-name">{{ passport.full_name }}</h3>
+                        <p><strong>№:</strong> {{ passport.passport_number }}</p>
+                        <p><strong>Страна:</strong> {{ passport.country }}</p>
+                        <div class="passport-buttons">
+                            <a href="{% url 'passport_detail' passport.pk %}" class="btn">Подробнее</a>
+                            <a href="{% url 'add_to_cart' passport.pk %}" class="btn">Выбор</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-results">Ничего не найдено.</p>
+    {% endif %}
+</div>
+{% endblock %}
