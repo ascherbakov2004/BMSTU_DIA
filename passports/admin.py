@@ -8,6 +8,7 @@ class PassportAdmin(admin.ModelAdmin):
 
     def photo_preview(self, obj):
         if obj.photo:
+
             return mark_safe(f'<img src="{obj.photo.url}" width="100" height="100" />')
         return "(Нет фото)"
 
