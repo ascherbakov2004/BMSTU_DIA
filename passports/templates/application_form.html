@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="application-container">
+    <h2 class="form-title">Заполнение информации о пересечении границы</h2>
+
+    <div class="selected-passports">
+        <h3>Выбранные паспорта:</h3>
+        {% if passports %}
+            <ul class="passport-list">
+                {% for passport in passports %}
+                    <li>{{ passport.full_name }} (№{{ passport.passport_number }})</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="error-message">Вы не выбрали ни одного паспорта.</p>
+        {% endif %}
+    </div>
+
+    <form method="post" class="application-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="id_crossing_date">Дата пересечения:</label>
+            <input type="date" name="crossing_date" id="id_crossing_date" value="{{ form.crossing_date.value|default:'' }}">
+            {% if form.crossing_date.errors %}
+                <div class="error-message">{{ form.crossing_date.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="id_flight_number">Номер рейса:</label>
+            {{ form.flight_number }}
+            {% if form.flight_number.errors %}
+                <div class="error-message">{{ form.flight_number.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="id_crossing_point">Место пересечения:</label>
+            {{ form.crossing_point }}
+            {% if form.crossing_point.errors %}
+                <div class="error-message">{{ form.crossing_point.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="id_destination_country">Страна назначения:</label>
+            {{ form.destination_country }}
+            {% if form.destination_country.errors %}
+                <div class="error-message">{{ form.destination_country.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="id_purpose">Цель поездки:</label>
+            {{ form.purpose }}
+            {% if form.purpose.errors %}
+                <div class="error-message">{{ form.purpose.errors }}</div>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn-submit">Подтвердить</button>
+    </form>
+</div>
+{% endblock %}
