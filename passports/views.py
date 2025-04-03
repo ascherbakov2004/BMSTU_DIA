@@ -4,6 +4,7 @@ from .models import BorderCrossingApplication, Passport, News
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.db import connection
 
 def passport_list(request):
     passports = Passport.objects.all()
@@ -79,7 +80,7 @@ def create_application(request):
 
 
 def applications_list(request):
-    applications = BorderCrossingApplication.objects.all()
+    applications = BorderCrossingApplication.objects.filter(is_deleted=False)
     return render(request, "applications_list.html", {"applications": applications})
 
 def confirm_crossing(request, application_id):
@@ -88,9 +89,12 @@ def confirm_crossing(request, application_id):
     return redirect('applications_list')
 
 def cancel_application(request, application_id):
-    application = get_object_or_404(BorderCrossingApplication, id=application_id)
-    application.delete()
-    messages.success(request, f"Заявка {application.id} успешно отменена.")
+    with connection.cursor() as cursor:
+        cursor.execute(
+            "UPDATE passports_bordercrossingapplication SET is_deleted = TRUE WHERE id = %s",
+            [application_id]
+        )
+    messages.success(request, f"Заявка {application_id} успешно отменена (soft delete).")
     return redirect('applications_list')
 
 def home(request):
